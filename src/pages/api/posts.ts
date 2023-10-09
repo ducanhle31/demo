@@ -34,7 +34,7 @@ export default async function handler(
       : `${api_url}/posts?_embed&per_page=10&status=publish&page=${page}`; */
       const endPoint = id
       ? `${api_url}/posts?_embed&per_page=10&status=publish&page=${page}`
-      : `${api_url}/posts?_embed&per_page=10&status=publish&page=${page}`;
+      : `${api_url}/posts?_embed&per_page=10&status=publish&page=${page}&categories=${id}`;
     //get posts category==='tin-tuc'
     const res = await fetch(endPoint, {
       next: { revalidate: 1 },
